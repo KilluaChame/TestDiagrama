@@ -1,0 +1,40 @@
+Classe Produto {
+    - id: int
+    - nome: string
+    - preco: float
+    - quantidadeEstoque: int
+    + cadastrarProduto(): void
+    + venderProduto(): void
+}
+
+Classe Cliente {
+    - id: int
+    - nome: string
+    - telefone: string
+    - endereco: string
+    - debito: float
+    + cadastrarCliente(): void
+}
+
+Classe Venda {
+    - id: int
+    - data: Date
+    - valorTotal: float
+    - formaPagamento: string
+    + adicionarItem(produto: Produto, quantidade: int): void
+    + calcularTotal(): float
+}
+
+Classe Estoque {
+    - produtos: array<Produto>
+    + adicionarProduto(produto: Produto): void
+    + removerProduto(produto: Produto): void
+    + relatorioEstoque(): void
+}
+
+Classe Relatorio {
+    - vendas: array<Venda>
+    - clientesDevedores: array<Cliente>
+    + gerarRelatorioVendas(): void
+    + gerarRelatorioClientesDevedores(): void
+}
